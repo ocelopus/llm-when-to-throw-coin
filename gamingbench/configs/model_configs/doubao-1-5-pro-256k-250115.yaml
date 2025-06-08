@@ -1,0 +1,6 @@
+llm_model_path: doubao-1-5-pro-256k-250115
+max_tokens: 12288
+timeout: 60
+temperature: 0.2
+model_type: LLMModel
+nick_name: doubao-1-5-pro-256k-250115

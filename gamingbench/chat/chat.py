@@ -10,12 +10,14 @@ def write_to_file(file_path, content):
     with open(file_path, 'w') as file:
         file.write(content)
 
+BASE_URL = os.environ['OA_BASE_URL']
 
 def chat_llm(messages, model, temperature, max_tokens, n, timeout, stop, return_tokens=False, chat_seed=0):
-    if model.__contains__("gpt"):
+    if model.__contains__("gpt") or True:
         iterated_query = False
         chat = ChatOpenAI(model_name=model,
                           openai_api_key=os.environ['OPENAI_API_KEY'],
+                          base_url=BASE_URL,
                           temperature=temperature,
                           max_tokens=max_tokens,
                           n=n,
